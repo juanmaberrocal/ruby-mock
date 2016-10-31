@@ -1,0 +1,48 @@
+<h1>Task <small><%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-link' %></small></h1>
+
+<% if notice.present? %>
+  <p id="notice" class="bg-info"><%= notice %></p>
+<%end%>
+
+<div class="row">
+  <!-- Base information about task -->
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= label_tag :name, 'Name:', class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10"><%= @task.name %></div>
+    </div>
+    <div class="form-group">
+      <%= label_tag :exc_path, 'Exec. Path:', class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10"><%= @task.exc_path %></div>
+    </div>
+    <div class="form-group">
+      <%= label_tag :server_key, 'Server Key:', class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10"><%= @task.server_key %></div>
+    </div>
+  </div>
+
+  <br class="visible-xs"/>
+
+  <!-- schedule -->
+  <fieldset class="col-sm-6">
+    <legend>Schedule</legend>
+    <div class="row">
+    	<div class="form-group col-sm-6">
+          <%= label_tag :start_datetime, 'Start:', class: 'col-xs-2 control-label' %>
+          <div class="col-xs-10"><%= @task.start_datetime %></div>
+        </div>
+	    <div class="form-group col-sm-6">
+	      <%= label_tag :end_datetime, 'End:', class: 'col-xs-2 control-label' %>
+	      <div class="col-xs-10"><%= @task.end_datetime %></div>
+	    </div>
+    </div>
+    <div class="form-group">
+      <%= label_tag :exc_days, 'Days:', class: 'col-xs-1 control-label' %>
+      <div class="col-xs-11"><%= @task.exc_days.join(", ") %></div>
+    </div>
+  </fieldset>
+</div>
+
+<br/>
+
+<%= link_to 'Back', tasks_path, class: 'btn btn-default' %>

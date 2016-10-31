@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruby Mock - App</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Ruby Mock - App</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="<%= params[:controller] == 'agent_clients' ? 'active' : nil %>"><%= link_to "Agents (#{agent_count})", agent_clients_path %></li>
+          <li class="<%= params[:controller] == 'tasks' ? 'active' : nil %>"><%= link_to 'Tasks', tasks_path %></li>
+          <li class="<%= params[:controller] == 'task_logs' ? 'active' : nil %>"><%= link_to 'Logs', task_logs_path %></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+
+  <br/>
+
+  <footer>
+  	<!-- applicant info -->
+  	<p class="text-center">By: Juan M Berrocal</p>
+  </footer>
+
+</body>
+</html>

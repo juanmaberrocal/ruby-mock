@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-6">
+	<strong>Available API:</strong>
+	<br/>
+	<ul>
+	  <li><%= link_to 'List Agent Clients', api_agent_clients_path(token: params[:token]) %></li>
+	  <li><%= link_to 'List Tasks', api_tasks_path(token: params[:token]) %></li>
+	  <li><%= link_to 'List Logs', api_task_logs_path(token: params[:token]) %></li>
+	</ul>
+	<small>To view specific records, add <samp>/:id</samp> to url</small>
+  </div>
+  <div class="col-sm-6">
+  	<strong>Manually Invoke Agent (DEMO)</strong>
+  	<p>Call an agent by name to run associated task and create log record</p>
+  	<%= text_field_tag 'api_agent_name', nil, class: 'control' %>
+  	<button id="demo_agent_call" class="btn btn-default" data-path="<%= api_agent_call_path(name: 'name', token: params[:token])%>">Invoke</button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+// import bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// bootstrap fixes
+table.table {
+	tbody {
+	  tr {
+	    td {
+	     vertical-align: middle;
+	    }
+	  }
+	}
+}
+
+div.form-group {
+	min-height: 1.5em;
+}
+
+p#notice,
+div#error_explanation {
+	padding: 0 5px;
+}

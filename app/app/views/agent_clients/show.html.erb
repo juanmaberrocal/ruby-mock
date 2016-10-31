@@ -1,0 +1,24 @@
+<h1>Agent Client <small><%= link_to 'Edit', edit_agent_client_path(@agent_client), class: 'btn btn-link' %></small></h1>
+
+<% if notice.present? %>
+  <p id="notice" class="bg-info"><%= notice %></p>
+<%end%>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= label_tag :name, 'Name:', class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10"><%= @agent_client.name %></div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= label_tag :server_key, 'Server Key:', class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10"><%= @agent_client.server_key %></div>
+    </div>
+  </div>
+</div>
+
+<br/>  
+
+<%= link_to 'Back', agent_clients_path, class: 'btn btn-default' %>

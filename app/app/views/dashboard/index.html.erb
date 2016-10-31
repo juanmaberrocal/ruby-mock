@@ -1,0 +1,24 @@
+<div class="table-responsive">
+  <table id="dashboard" class="table">
+    <thead>
+    	<tr>
+    		<% Task::EXC_DAYS.each do |day| %>
+    			<th><%= day %></th>
+    		<%end%>
+    	</tr>
+    </thead>
+    <tbody>
+    	<tr>
+    		<% Task::EXC_DAYS.each do |day| %>
+    			<td>
+    				<div class="list-group">
+    					<% @tasks_per_day[:"#{day}"].each do |task| %>
+    						<%= link_to task.name, task, class: 'list-group-item' %>
+    					<%end%>
+    				</ul>
+    			</td>
+    		<%end%>
+    	<tr/>
+    </tbody>
+  </table>
+</div>

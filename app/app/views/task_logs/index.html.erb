@@ -1,0 +1,29 @@
+<h1>Log Records</h1>
+
+<% if notice.present? %>
+  <p id="notice" class="bg-info"><%= notice %></p>
+<%end%>
+
+<table class="table tabel-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Process</th>
+      <th>Execution Time (in hours)</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_logs.each do |log| %>
+      <tr class="<%= log.exc_status == 'Fail' ? 'danger' : nil %>">
+        <td><%= log.exc_status %></td>
+        <td><%= log.exc_process %></td>
+        <td><%= log.exc_time %></td>
+        <td><%= log.start_datetime %></td>
+        <td><%= log.end_datetime %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,6 @@
+task_log_one:
+  task: task_one
+  start_datetime: 2016-10-02 19:22:48
+  end_datetime: 2016-10-02 22:22:48
+  exc_time: 3
+  exc_status: Success
